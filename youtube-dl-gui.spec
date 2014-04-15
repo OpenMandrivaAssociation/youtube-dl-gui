@@ -10,6 +10,7 @@ Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}.png
 BuildRequires:	imagemagick
 BuildRequires:	python-setuptools
+BuildRequires:	wxPythonGTK
 Requires:	ffmpeg
 Requires:	wxPythonGTK
 Requires:	youtube-dl
