@@ -1,0 +1,12 @@
+diff -urN youtube-dl-gui-0.3.5/youtube_dl_gui/YoutubeDLGUI.py youtube-dl-gui-0.3.5-patched/youtube_dl_gui/YoutubeDLGUI.py
+--- youtube-dl-gui-0.3.5/youtube_dl_gui/YoutubeDLGUI.py	2014-04-08 21:51:33.000000000 +1100
++++ youtube-dl-gui-0.3.5-patched/youtube_dl_gui/YoutubeDLGUI.py	2014-04-16 03:03:30.965623000 +1100
+@@ -75,7 +75,7 @@
+ 	     "Spanish",
+ 	     "German"]
+ 	     
+-ICON = icon_path(['icons', 'ytube.png'], __file__)
++ICON = '/usr/share/pixmaps/ytube.png'
+   
+ class MainFrame(wx.Frame):
+   
