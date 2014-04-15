@@ -8,6 +8,8 @@ Url:		http://code.google.com/p/youtube-dlg/
 Patch0:		youtube-dl-gui-0.3.5-icon.patch
 Source0:	%{name}-%{version}.tar.bz2
 Source1:	%{name}.png
+BuildRequires:	imagemagick
+BuildRequires:	python-setuptools
 Requires:	ffmpeg
 Requires:	wxPythonGTK
 Requires:	youtube-dl
