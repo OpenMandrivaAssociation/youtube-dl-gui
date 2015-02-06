@@ -1,7 +1,7 @@
 Summary:	GUI for youtube-dl
 Name:		youtube-dl-gui
 Version:	0.3.5
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Video
 Url:		http://code.google.com/p/youtube-dlg/
