@@ -10,7 +10,7 @@ Url:		http://code.google.com/p/youtube-dlg/
 Source0:	https://github.com/MrS0m30n3/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
 BuildRequires:	imagemagick
-BuildRequires:	python-setuptools
+BuildRequires:	python2-setuptools
 BuildRequires:	wxPythonGTK
 Requires:	ffmpeg
 Requires:	wxPythonGTK
@@ -37,10 +37,10 @@ select the video quality and more.
 #patch0 -p1
 
 %build
-python setup.py build
+python2 setup.py build
 
 %install
-python setup.py install --prefix=/usr --root=%{buildroot}
+python2 setup.py install --prefix=/usr --root=%{buildroot}
 
 mkdir -p %{buildroot}%{_bindir}
 pushd %{buildroot}%{_bindir}
