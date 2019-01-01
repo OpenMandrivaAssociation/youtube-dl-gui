@@ -6,7 +6,7 @@ License:	Public Domain
 Group:		Video
 Url:		http://code.google.com/p/youtube-dlg/
 # http://mrs0m30n3.github.io/youtube-dl-gui/
-Patch0:		youtube-dl-gui-0.3.5-icon.patch
+#Patch0:		youtube-dl-gui-0.3.5-icon.patch
 Source0:	https://github.com/MrS0m30n3/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
 BuildRequires:	imagemagick
@@ -34,7 +34,7 @@ select the video quality and more.
 
 %prep
 %setup -q
-%patch0 -p1
+#patch0 -p1
 
 %build
 python setup.py build
