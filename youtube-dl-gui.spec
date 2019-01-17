@@ -44,11 +44,11 @@ python2 setup.py build
 %install
 python2 setup.py install --prefix=/usr --root=%{buildroot}
 
-mkdir -p %{buildroot}%{_bindir}
-pushd %{buildroot}%{_bindir}
-ln -s ../..%{python_sitelib}/youtube_dl_gui/__main__.py %{name}
-chmod +x %{name}
-popd
+#mkdir -p %{buildroot}%{_bindir}
+#pushd %{buildroot}%{_bindir}
+#ln -s ../..%{python_sitelib}/youtube_dl_gui/__main__.py %{name}
+#chmod +x %{name}
+#popd
 
 mkdir -p %{buildroot}%{_datadir}/pixmaps
 install -m 0644 icons/ytube.png %{buildroot}%{_datadir}/pixmaps/ytube.png
