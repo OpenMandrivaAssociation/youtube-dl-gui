@@ -1,7 +1,7 @@
 Summary:	GUI for youtube-dl
 Name:		youtube-dl-gui
 Version:	0.4
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Video
 Url:		http://code.google.com/p/youtube-dlg/
@@ -17,6 +17,7 @@ BuildRequires:	wxPythonGTK
 Requires:	ffmpeg
 Requires:	wxPythonGTK
 Requires:	youtube-dl
+Requires: python2-twodict
 BuildArch:	noarch
 
 %description
@@ -40,7 +41,6 @@ select the video quality and more.
 
 %prep
 %setup -q
-#patch0 -p1
 
 %build
 python2 setup.py build
