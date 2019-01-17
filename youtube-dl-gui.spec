@@ -26,11 +26,15 @@ once, can automatically convert downloaded videos to audio, lets you
 select the video quality and more.
 
 %files
+%files
+%doc AUTHORS README.md TODO docs/*
+%license LICENSE
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_datadir}/pixmaps/ytube.png
-%{python_sitelib}/*
+%{_datadir}/pixmaps/%{name}.png
+%{python2_sitelib}/youtube_dl_gui/
+%{python2_sitelib}/Youtube_DLG-%{version}-py%{python2_version}.egg-info
 
 #----------------------------------------------------------------------------
 
