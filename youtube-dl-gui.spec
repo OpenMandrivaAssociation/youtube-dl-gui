@@ -10,7 +10,9 @@ Url:		http://code.google.com/p/youtube-dlg/
 Source0:	https://github.com/MrS0m30n3/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
 BuildRequires:	imagemagick
+BuildRequires:  python2-devel
 BuildRequires:	python2-setuptools
+BuildRequires:  pythonegg(twodict)
 BuildRequires:	wxPythonGTK
 Requires:	ffmpeg
 Requires:	wxPythonGTK
