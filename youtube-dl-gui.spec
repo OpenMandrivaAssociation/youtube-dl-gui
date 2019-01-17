@@ -44,15 +44,6 @@ python2 setup.py build
 %install
 python2 setup.py install --prefix=/usr --root=%{buildroot}
 
-#mkdir -p %{buildroot}%{_bindir}
-#pushd %{buildroot}%{_bindir}
-#ln -s ../..%{python_sitelib}/youtube_dl_gui/__main__.py %{name}
-#chmod +x %{name}
-#popd
-
-mkdir -p %{buildroot}%{_datadir}/pixmaps
-install -m 0644 icons/ytube.png %{buildroot}%{_datadir}/pixmaps/ytube.png
-
 mkdir -p  %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
@@ -65,9 +56,4 @@ Type=Application
 Categories=Video;
 EOF
 
-for N in 16 32 48 64 128;
-do
-convert %{SOURCE1} -scale ${N}x${N} $N.png;
-install -D -m 0644 $N.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/%{name}.png
-done
 
