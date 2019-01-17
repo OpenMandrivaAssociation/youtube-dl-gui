@@ -1,15 +1,18 @@
 Summary:	GUI for youtube-dl
 Name:		youtube-dl-gui
-Version:	0.3.5
-Release:	2
+Version:	0.4
+Release:	1
 License:	Public Domain
 Group:		Video
 Url:		http://code.google.com/p/youtube-dlg/
-Patch0:		youtube-dl-gui-0.3.5-icon.patch
-Source0:	%{name}-%{version}.tar.bz2
+# http://mrs0m30n3.github.io/youtube-dl-gui/
+#Patch0:		youtube-dl-gui-0.3.5-icon.patch
+Source0:	https://github.com/MrS0m30n3/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	%{name}.png
 BuildRequires:	imagemagick
-BuildRequires:	python-setuptools
+BuildRequires:  python2-devel
+BuildRequires:	python2-setuptools
+BuildRequires:  pythonegg(twodict)
 BuildRequires:	wxPythonGTK
 Requires:	ffmpeg
 Requires:	wxPythonGTK
@@ -23,32 +26,27 @@ once, can automatically convert downloaded videos to audio, lets you
 select the video quality and more.
 
 %files
+%files
+%doc AUTHORS README.md TODO docs/*
+%license LICENSE
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_datadir}/pixmaps/ytube.png
-%{python_sitelib}/*
+%{_datadir}/pixmaps/%{name}.png
+%{python2_sitelib}/youtube_dl_gui/
+%{python2_sitelib}/Youtube_DLG-%{version}-py%{python2_version}.egg-info
 
 #----------------------------------------------------------------------------
 
 %prep
 %setup -q
-%patch0 -p1
+#patch0 -p1
 
 %build
-python setup.py build
+python2 setup.py build
 
 %install
-python setup.py install --prefix=/usr --root=%{buildroot}
-
-mkdir -p %{buildroot}%{_bindir}
-pushd %{buildroot}%{_bindir}
-ln -s ../..%{python_sitelib}/youtube_dl_gui/__main__.py %{name}
-chmod +x %{name}
-popd
-
-mkdir -p %{buildroot}%{_datadir}/pixmaps
-install -m 0644 icons/ytube.png %{buildroot}%{_datadir}/pixmaps/ytube.png
+python2 setup.py install --prefix=/usr --root=%{buildroot}
 
 mkdir -p  %{buildroot}%{_datadir}/applications
 cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
@@ -62,9 +60,4 @@ Type=Application
 Categories=Video;
 EOF
 
-for N in 16 32 48 64 128;
-do
-convert %{SOURCE1} -scale ${N}x${N} $N.png;
-install -D -m 0644 $N.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/%{name}.png
-done
 
