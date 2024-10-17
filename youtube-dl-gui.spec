@@ -4,7 +4,7 @@ Version:	0.4
 Release:	2
 License:	Public Domain
 Group:		Video
-Url:		http://code.google.com/p/youtube-dlg/
+Url:		https://code.google.com/p/youtube-dlg/
 # http://mrs0m30n3.github.io/youtube-dl-gui/
 #Patch0:		youtube-dl-gui-0.3.5-icon.patch
 Source0:	https://github.com/MrS0m30n3/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
